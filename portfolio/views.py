@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.core.mail import send_mail
+from portfolio.forms import contactMe
 
 
 # Create your views here.
@@ -12,26 +13,16 @@ def portfolio(request):
         subject = request.POST['subject']
         message = request.POST['message']
 
-        # data = {
-        #     'name': fname,
-        #     'email': email,
-        #     'subject': subject,
-        #     'message': message
-        # }
-        
-        # message = '''
-        # New message: {}
-
-        # From: {}
-        
-        # '''.format(data['message'], data['email'])
-        # send_mail(
-        #     subject,
-        #     message,
-        #     email,
-
+        form = contactMe(request.POST)
+        if form.is_valid():
+            print('failed')
+            #return redirect('index')
+            return HttpResponse("Hello, we got it")
+    else:
+        #form = contactMe()
+        print('failed')
             
         #     ['linibensonjr@gmail.com]'])
-    return HttpResponse("Hello, we got it")
+        
 
-    return render(request, 'index.html', {})
+    return render(request, 'index.html', {'form':form})

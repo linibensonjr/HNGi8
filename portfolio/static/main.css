@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.social {
+    background-color: rgb(77, 91, 224);
+    height: 12vh;
+}
+
+/* .row {
+    display: none;
+} */
