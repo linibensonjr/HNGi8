@@ -35,39 +35,6 @@
     <form class="col s12 contact" action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <div class="row">
-        <div class="input-field col s6">
-          <input name="first_name" placeholder="First Name" type="text" class="validate">
-          
-        </div>
-        <div class="input-field col s6">
-          <input name="last_name" type="text" placeholder="Last Name" class="validate">
-          
-        </div>
-      </div>
-     
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="email" type="email" placeholder="Email" class="validate">
-          
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="subject" type="text" placeholder="Subject" class="validate">
-          
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea  rows="20" name="message" placeholder="Your message" class="materialize-textarea"></textarea>
-          
-        </div>
-      </div>
-
-        
 
         <button class="btn waves-effect waves-light" type="submit" name="action">Shoot
             <i class="material-icons right">send</i>
